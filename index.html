@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Narcizo Restaurante. Cartas digitales, reservas y redes sociales.">
+  <meta name="theme-color" content="#0b0a09">
+
+  <title>Narcizo | Cartas digitales</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <video class="background-video" autoplay muted loop playsinline preload="metadata">
+    <source src="assets/video-narcizo.mp4" type="video/mp4">
+  </video>
+
+  <div class="background-overlay"></div>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <img src="assets/logo-narcizo.png" alt="Narcizo" class="logo">
+
+      <p class="eyebrow">RESTAURANTE · CAFETERÍA</p>
+
+      <h1>Sabores que se convierten en momentos</h1>
+
+      <p class="hero-copy">
+        Explorá nuestras cartas digitales, reservá tu mesa y descubrí la experiencia Narcizo.
+      </p>
+
+      <div class="hero-actions">
+        <button class="primary-button" data-open-menu="comidas">
+          Ver nuestras cartas
+        </button>
+
+        <a class="secondary-button" href="https://wa.me/5492964000000" target="_blank" rel="noopener noreferrer">
+          Reservar por WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <div class="scroll-indicator" aria-hidden="true">
+      <span></span>
+    </div>
+  </header>
+
+  <main>
+    <section class="menu-section" id="cartas">
+      <div class="section-heading">
+        <p class="section-kicker">NUESTRA PROPUESTA</p>
+        <h2>Elegí tu carta</h2>
+        <p>
+          Cada carta se abre dentro del sitio y puede editarse fácilmente desde un único archivo.
+        </p>
+      </div>
+
+      <div class="menu-grid">
+        <button class="menu-card featured" data-open-menu="comidas">
+          <span class="menu-number">01</span>
+          <span class="menu-title">Carta de comidas</span>
+          <span class="menu-description">Entradas, principales, pastas, carnes y postres.</span>
+          <span class="menu-arrow">Explorar carta ↗</span>
+        </button>
+
+        <button class="menu-card" data-open-menu="bebidas">
+          <span class="menu-number">02</span>
+          <span class="menu-title">Carta de bebidas</span>
+          <span class="menu-description">Vinos, tragos, cervezas y bebidas sin alcohol.</span>
+          <span class="menu-arrow">Explorar carta ↗</span>
+        </button>
+
+        <button class="menu-card" data-open-menu="desayunos">
+          <span class="menu-number">03</span>
+          <span class="menu-title">Desayunos y meriendas</span>
+          <span class="menu-description">Cafetería, pastelería y opciones saladas.</span>
+          <span class="menu-arrow">Explorar carta ↗</span>
+        </button>
+
+        <button class="menu-card sushi" data-open-menu="sushi">
+          <span class="menu-number">04</span>
+          <span class="menu-title">Carta de sushi</span>
+          <span class="menu-description">Disponible exclusivamente martes y jueves.</span>
+          <span class="sushi-badge">MARTES · JUEVES</span>
+          <span class="menu-arrow">Explorar carta ↗</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="contact-section">
+      <div>
+        <p class="section-kicker">VISITANOS</p>
+        <h2>Espora 624 · Río Grande</h2>
+        <p>
+          Consultas, reservas y pedidos a través de nuestros canales oficiales.
+        </p>
+      </div>
+
+      <div class="social-links">
+        <a href="https://wa.me/5492964000000" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="https://maps.google.com/" target="_blank" rel="noopener noreferrer">Cómo llegar</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <img src="assets/logo-narcizo.png" alt="Narcizo" class="footer-logo">
+    <p>© <span id="current-year"></span> Narcizo. Todos los derechos reservados.</p>
+  </footer>
+
+  <a
+    class="floating-whatsapp"
+    href="https://wa.me/5492964000000"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Reservar por WhatsApp"
+  >
+    <span>W</span>
+  </a>
+
+  <div class="menu-modal" id="menu-modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-menu></div>
+
+    <section class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" type="button" data-close-menu aria-label="Cerrar carta">×</button>
+
+      <header class="modal-header">
+        <p class="section-kicker" id="modal-kicker">CARTA DIGITAL</p>
+        <h2 id="modal-title">Carta</h2>
+        <p id="modal-description"></p>
+      </header>
+
+      <div class="category-tabs" id="category-tabs"></div>
+      <div class="menu-content" id="menu-content"></div>
+
+      <div class="modal-footer">
+        <p>Los precios y la disponibilidad pueden modificarse sin previo aviso.</p>
+        <a href="https://wa.me/5492964000000" target="_blank" rel="noopener noreferrer">
+          Consultar por WhatsApp
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <script src="menu-data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

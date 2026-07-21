@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Carta digital de Narcizo Coffee Bar, Río Grande.">
+  <meta name="theme-color" content="#0b0a09">
+  <title>Narcizo | Carta digital</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <video class="background-video" autoplay muted loop playsinline preload="metadata">
+    <source src="video-narcizo.mp4" type="video/mp4">
+  </video>
+  <div class="background-overlay"></div>
+
+  <header class="hero">
+    <div class="hero-card">
+      <img src="logo-narcizo.png" alt="Narcizo" class="logo">
+      <p class="eyebrow">RESTAURANTE · CAFETERÍA</p>
+      <h1>Carta digital</h1>
+      <p class="hero-text">Descubrí nuestra propuesta gastronómica y elegí tu experiencia Narcizo.</p>
+
+      <div class="main-actions">
+        <button class="primary-action" data-menu="comidas">Ver carta</button>
+        <a class="secondary-action" href="https://wa.me/5492964000000" target="_blank" rel="noopener">Reservar por WhatsApp</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="menus-section" id="cartas">
+      <div class="section-heading">
+        <span>NUESTRAS CARTAS</span>
+        <h2>Elegí una experiencia</h2>
+      </div>
+
+      <div class="menu-cards">
+        <button class="menu-card featured" data-menu="comidas">
+          <small>01</small>
+          <h3>Comidas</h3>
+          <p>Entradas, pizzas, pastas, milanesas, especiales, postres y más.</p>
+          <strong>Ver carta ↗</strong>
+        </button>
+
+        <button class="menu-card" data-menu="bebidas">
+          <small>02</small>
+          <h3>Bebidas</h3>
+          <p>Sin alcohol, cervezas, tragos, gin tonic y whiskies.</p>
+          <strong>Ver carta ↗</strong>
+        </button>
+
+        <button class="menu-card" data-menu="desayunos">
+          <small>03</small>
+          <h3>Desayunos y meriendas</h3>
+          <p>Cafetería, opciones dulces, saladas y meriendas completas.</p>
+          <strong>Ver carta ↗</strong>
+        </button>
+
+        <button class="menu-card sushi-card" data-menu="sushi">
+          <small>04</small>
+          <h3>Sushi</h3>
+          <p>Disponible únicamente martes y jueves.</p>
+          <span class="badge">MARTES · JUEVES</span>
+          <strong>Ver carta ↗</strong>
+        </button>
+      </div>
+    </section>
+
+    <section class="contact-section">
+      <div>
+        <span>VISITANOS</span>
+        <h2>Espora 624 · Río Grande</h2>
+        <p>Reservas, consultas y pedidos a través de nuestros canales oficiales.</p>
+      </div>
+      <div class="contact-links">
+        <a href="https://wa.me/5492964000000" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://instagram.com/narcizocoffeebar" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://facebook.com/" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://maps.google.com/" target="_blank" rel="noopener">Cómo llegar</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <img src="logo-narcizo.png" alt="Narcizo">
+    <p>© <span id="year"></span> Narcizo Coffee Bar</p>
+  </footer>
+
+  <a class="floating-whatsapp" href="https://wa.me/5492964000000" target="_blank" rel="noopener" aria-label="WhatsApp">W</a>
+
+  <div class="modal" id="menu-modal" aria-hidden="true">
+    <div class="modal-overlay" data-close></div>
+    <section class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="close-button" data-close aria-label="Cerrar">×</button>
+
+      <div class="modal-header">
+        <span>CARTA DIGITAL</span>
+        <h2 id="modal-title">Carta</h2>
+        <p id="modal-description"></p>
+      </div>
+
+      <div class="search-wrap">
+        <input id="menu-search" type="search" placeholder="Buscar un plato o bebida...">
+      </div>
+
+      <div class="category-tabs" id="category-tabs"></div>
+      <div class="menu-results" id="menu-results"></div>
+
+      <div class="modal-note">
+        <p>Los precios y la disponibilidad pueden modificarse sin previo aviso.</p>
+        <a href="https://wa.me/5492964000000" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+      </div>
+    </section>
+  </div>
+
+  <script src="menu-data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
